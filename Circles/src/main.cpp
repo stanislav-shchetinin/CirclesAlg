@@ -12,8 +12,19 @@ void argc_check(int argc) {
 
 int main(int argc, char* argv[]) {
 
-	argc_check(argc);
-	
+	Field field;
+	std::vector <Circle> circles;
+
+	try {
+		argc_check(argc);
+		auto [field, circles] = parse_xml(argv[1]);
+	}
+	catch (const std::exception e) {
+		std::cerr << e.what();
+		return 1;
+	}
+
+
 
 	return 0;
 }

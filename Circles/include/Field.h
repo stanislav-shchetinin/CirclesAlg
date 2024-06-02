@@ -4,6 +4,8 @@
 #include "Rectangle.h"
 
 struct Field {
-	const Rectangle main;
+	const Rectangle main{};
 	const std::vector<Rectangle> alarms;
+
+	Field() = default;
 };
